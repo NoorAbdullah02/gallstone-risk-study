@@ -60,12 +60,14 @@ export default function Home() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        className="hero-glow"
       >
         <Badge variant="default" className="mb-4">
           <FlaskConical className="h-3 w-3" /> ISRC 2026 &middot; Poster Presentation
         </Badge>
         <h1 className="max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          Predicting Gallstone Disease from Clinical and Laboratory Data
+          Predicting <span className="text-gradient">Gallstone Disease</span> from Clinical and
+          Laboratory Data
         </h1>
         <p className="mt-2 max-w-2xl text-base text-muted-foreground">
           A leakage-aware machine learning evaluation: fold-local feature engineering,
