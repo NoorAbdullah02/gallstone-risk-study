@@ -1,0 +1,11 @@
+**/node_modules
+frontend/.next
+frontend/out
+frontend/.env*.local
+.git
+.claude
+__pycache__
+**/__pycache__
+*.pyc
+gallstone_upgrade_exploratory
+gallstone_upgrade_exploratory.zip

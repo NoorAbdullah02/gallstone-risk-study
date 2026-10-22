@@ -1,4 +1,5 @@
-"""FastAPI backend serving the gallstone risk model and study results.
+"""FastAPI backend serving the gallstone risk model, study results, and
+(when built) the Next.js static-exported frontend from the same origin.
 
 Run from the project root: uvicorn backend.main:app --reload --port 8000
 (must run from the root so `model.transformers` resolves for joblib.)
@@ -11,12 +12,15 @@ import joblib
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, create_model
 
 from model.transformers import ClinicalFeatures, ClipByTrainingQuantiles  # noqa: F401 (needed for unpickling)
 
 ROOT = Path(__file__).resolve().parent.parent
 ARTIFACTS = ROOT / "model" / "artifacts"
+FRONTEND_DIR = ROOT / "frontend" / "out"
 
 app = FastAPI(title="Gallstone Risk Model API", version="1.0.0")
 
@@ -54,8 +58,8 @@ def risk_level(p: float) -> str:
     return "High"
 
 
-@app.get("/")
-def root():
+@app.get("/api/health")
+def health():
     return {"status": "ok", "model": "gallstone-risk-logreg"}
 
 
@@ -83,3 +87,43 @@ def predict(payload: PatientInput):
         predicted_class=int(proba >= 0.5),
         decision_threshold=0.5,
     )
+
+
+# --- Serve the Next.js static export (frontend/out), if it has been built. ---
+# Registered last so it never shadows the /api/* routes above.
+if FRONTEND_DIR.exists():
+    next_assets = FRONTEND_DIR / "_next"
+    if next_assets.exists():
+        app.mount("/_next", StaticFiles(directory=next_assets), name="next-static")
+
+    _frontend_root = FRONTEND_DIR.resolve()
+
+    def _safe_under_root(candidate: Path) -> Path | None:
+        resolved = candidate.resolve()
+        if resolved == _frontend_root or _frontend_root in resolved.parents:
+            return resolved
+        return None
+
+    @app.get("/{full_path:path}")
+    def serve_frontend(full_path: str):
+        if full_path.startswith("api/"):
+            raise HTTPException(status_code=404)
+        candidates = (
+            [FRONTEND_DIR / "index.html"]
+            if full_path == ""
+            else [
+                FRONTEND_DIR / full_path,
+                FRONTEND_DIR / f"{full_path}.html",
+                FRONTEND_DIR / full_path / "index.html",
+            ]
+        )
+        target = next(
+            (p for c in candidates if (p := _safe_under_root(c)) is not None and p.is_file()),
+            None,
+        )
+        if target is None:
+            not_found = FRONTEND_DIR / "404.html"
+            if not_found.is_file():
+                return FileResponse(not_found, status_code=404)
+            raise HTTPException(status_code=404)
+        return FileResponse(target)

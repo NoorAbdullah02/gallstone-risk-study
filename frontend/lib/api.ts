@@ -1,5 +1,8 @@
-export const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE ?? "http://127.0.0.1:8000";
+// Defaults to "" (same-origin) for the unified single-service deploy, where
+// the backend also serves this static export. frontend/.env.local overrides
+// this to http://127.0.0.1:8000 for local dev when running the two servers
+// separately; that file is gitignored and absent from the production build.
+export const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "";
 
 export type FeatureType = "binary" | "ordinal" | "continuous";
 
