@@ -1,0 +1,10 @@
+{
+  "configuration": [
+    "LR",
+    true,
+    "all",
+    0.1
+  ],
+  "inner_CV_mean_auc_training_only": 0.8921778610131522,
+  "warning": "Full-data training/selection is NOT external or independent validation."
+}

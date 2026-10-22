@@ -1,0 +1,382 @@
+[
+  {
+    "key": "Age",
+    "label": "Age",
+    "category": "Demographics",
+    "min": 20.0,
+    "max": 96.0,
+    "mean": 48.06896551724138,
+    "step": 1.0,
+    "type": "continuous"
+  },
+  {
+    "key": "Sex",
+    "label": "Sex",
+    "category": "Demographics",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.49216300940438873,
+    "step": 0.1,
+    "type": "binary"
+  },
+  {
+    "key": "Comorbidity",
+    "label": "Comorbidity",
+    "category": "Comorbidities",
+    "min": 0.0,
+    "max": 3.0,
+    "mean": 0.335423197492163,
+    "step": 1.0,
+    "type": "ordinal"
+  },
+  {
+    "key": "CAD",
+    "label": "Coronary Artery Disease",
+    "category": "Comorbidities",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.03761755485893417,
+    "step": 0.1,
+    "type": "binary"
+  },
+  {
+    "key": "Hypothyroidism",
+    "label": "Hypothyroidism",
+    "category": "Comorbidities",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.02821316614420063,
+    "step": 0.1,
+    "type": "binary"
+  },
+  {
+    "key": "Hyperlipidemia",
+    "label": "Hyperlipidemia",
+    "category": "Comorbidities",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.025078369905956112,
+    "step": 0.1,
+    "type": "binary"
+  },
+  {
+    "key": "DM",
+    "label": "Diabetes Mellitus",
+    "category": "Comorbidities",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.13479623824451412,
+    "step": 0.1,
+    "type": "binary"
+  },
+  {
+    "key": "Height",
+    "label": "Height",
+    "category": "Demographics",
+    "min": 145.0,
+    "max": 191.0,
+    "mean": 167.15673981191222,
+    "step": 1.0,
+    "type": "continuous"
+  },
+  {
+    "key": "Weight",
+    "label": "Weight",
+    "category": "Demographics",
+    "min": 42.9,
+    "max": 143.5,
+    "mean": 80.56489028213166,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "BMI",
+    "label": "Body Mass Index",
+    "category": "Demographics",
+    "min": 17.4,
+    "max": 49.7,
+    "mean": 28.87711598746081,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "TBW",
+    "label": "Total Body Water",
+    "category": "Body Composition",
+    "min": 13.0,
+    "max": 66.2,
+    "mean": 40.587774294670844,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "ECW",
+    "label": "Extracellular Water",
+    "category": "Body Composition",
+    "min": 9.0,
+    "max": 27.8,
+    "mean": 17.07115987460815,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "ICW",
+    "label": "Intracellular Water",
+    "category": "Body Composition",
+    "min": 13.8,
+    "max": 57.1,
+    "mean": 23.63448275862069,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "ECF_TBW",
+    "label": "ECF/TBW Ratio",
+    "category": "Body Composition",
+    "min": 29.23,
+    "max": 52.0,
+    "mean": 42.212037617554856,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Total_Body_Fat_Ratio",
+    "label": "Total Body Fat Ratio",
+    "category": "Body Composition",
+    "min": 6.3,
+    "max": 50.92,
+    "mean": 28.274984326018807,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Lean_Mass",
+    "label": "Lean Mass",
+    "category": "Body Composition",
+    "min": 48.99,
+    "max": 93.67,
+    "mean": 71.63824451410657,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Protein",
+    "label": "Protein",
+    "category": "Body Composition",
+    "min": 5.56,
+    "max": 24.81,
+    "mean": 15.938808777429466,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Visceral_Adiposity_Index",
+    "label": "Visceral Adiposity Index",
+    "category": "Body Composition",
+    "min": 1.0,
+    "max": 31.0,
+    "mean": 9.078369905956112,
+    "step": 1.0,
+    "type": "ordinal"
+  },
+  {
+    "key": "Bone_Mass",
+    "label": "Bone Mass",
+    "category": "Body Composition",
+    "min": 1.4,
+    "max": 4.0,
+    "mean": 2.803291536050157,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Muscle_Mass",
+    "label": "Muscle Mass",
+    "category": "Body Composition",
+    "min": 4.7,
+    "max": 78.8,
+    "mean": 54.27304075235109,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Obesity",
+    "label": "Obesity",
+    "category": "Body Composition",
+    "min": 0.4,
+    "max": 1954.0,
+    "mean": 35.85012539184953,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Total_Fat",
+    "label": "Total Fat",
+    "category": "Body Composition",
+    "min": 3.1,
+    "max": 62.5,
+    "mean": 23.487774294670846,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "VFA",
+    "label": "Visceral Fat Area",
+    "category": "Body Composition",
+    "min": 0.9,
+    "max": 41.0,
+    "mean": 12.171598746081504,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "VMA",
+    "label": "Visceral Muscle Area",
+    "category": "Body Composition",
+    "min": 18.9,
+    "max": 41.1,
+    "mean": 30.403448275862072,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Hepatic_Fat",
+    "label": "Hepatic Fat",
+    "category": "Body Composition",
+    "min": 0.0,
+    "max": 4.0,
+    "mean": 1.1504702194357366,
+    "step": 1.0,
+    "type": "ordinal"
+  },
+  {
+    "key": "Glucose",
+    "label": "Glucose",
+    "category": "Laboratory",
+    "min": 69.0,
+    "max": 575.0,
+    "mean": 108.68871473354231,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Total_Cholesterol",
+    "label": "Total Cholesterol",
+    "category": "Laboratory",
+    "min": 60.0,
+    "max": 360.0,
+    "mean": 203.49529780564262,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "LDL",
+    "label": "LDL Cholesterol",
+    "category": "Laboratory",
+    "min": 11.0,
+    "max": 293.0,
+    "mean": 126.65235109717868,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "HDL",
+    "label": "HDL Cholesterol",
+    "category": "Laboratory",
+    "min": 25.0,
+    "max": 273.0,
+    "mean": 49.47554858934169,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Triglyceride",
+    "label": "Triglyceride",
+    "category": "Laboratory",
+    "min": 1.39,
+    "max": 838.0,
+    "mean": 144.5021630094044,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "AST",
+    "label": "Aspartate Aminotransferase (AST)",
+    "category": "Laboratory",
+    "min": 8.0,
+    "max": 195.0,
+    "mean": 21.684952978056426,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "ALT",
+    "label": "Alanine Aminotransferase (ALT)",
+    "category": "Laboratory",
+    "min": 3.0,
+    "max": 372.0,
+    "mean": 26.855799373040753,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "ALP",
+    "label": "Alkaline Phosphatase",
+    "category": "Laboratory",
+    "min": 7.0,
+    "max": 197.0,
+    "mean": 73.11253918495298,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Creatinine",
+    "label": "Creatinine",
+    "category": "Laboratory",
+    "min": 0.46,
+    "max": 1.46,
+    "mean": 0.8006112852664576,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "GFR",
+    "label": "Glomerular Filtration Rate",
+    "category": "Laboratory",
+    "min": 10.6,
+    "max": 132.0,
+    "mean": 100.81890282131661,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "CRP",
+    "label": "C-Reactive Protein",
+    "category": "Laboratory",
+    "min": 0.0,
+    "max": 43.4,
+    "mean": 1.8538557993730407,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "HGB",
+    "label": "Hemoglobin",
+    "category": "Laboratory",
+    "min": 8.5,
+    "max": 18.8,
+    "mean": 14.418181818181816,
+    "step": 0.1,
+    "type": "continuous"
+  },
+  {
+    "key": "Vitamin_D",
+    "label": "Vitamin D",
+    "category": "Laboratory",
+    "min": 3.5,
+    "max": 53.1,
+    "mean": 21.401410658316614,
+    "step": 0.1,
+    "type": "continuous"
+  }
+]

@@ -1,0 +1,10 @@
+# Full environment: notebook + model training + backend API
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.4
+matplotlib>=3.8
+joblib>=1.4
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.6

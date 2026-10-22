@@ -1,0 +1,15 @@
+{
+  "auc_95_percent_conditional": [
+    0.8605590062111801,
+    0.9295964698482586
+  ],
+  "accuracy_95_percent_conditional": [
+    0.7774294670846394,
+    0.8620689655172413
+  ],
+  "paired_auc_delta_95_percent_conditional": [
+    0.002432384621432371,
+    0.05240486673480622
+  ],
+  "warning": "Conditional on already fitted cross-validated predictions; model discovery reused dataset; not a confirmatory CI."
+}

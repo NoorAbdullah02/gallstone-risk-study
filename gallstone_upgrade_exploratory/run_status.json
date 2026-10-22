@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE_EXPLORATORY_INTERNAL_ONLY",
+  "dataset_verified": true,
+  "outer_partitions": [
+    42,
+    123
+  ],
+  "outer_folds_per_partition": 5,
+  "candidate_count": 12,
+  "complete_oof_rows": 638,
+  "full_data_model_not_tested_externally": true
+}

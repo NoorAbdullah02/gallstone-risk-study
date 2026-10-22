@@ -1,0 +1,8 @@
+{
+  "rows": 319,
+  "input_features": 38,
+  "gallstone_present": 158,
+  "gallstone_absent": 161,
+  "csv_sha256": "f8aaa71e4e6caff48b8131c8113eeedf68c3bef827ad18790a067ae1f80d5ad7",
+  "note": "Dataset embedded from original user-uploaded dataset-uci.csv; not downloaded anew"
+}
