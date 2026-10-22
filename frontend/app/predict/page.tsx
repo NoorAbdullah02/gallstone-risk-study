@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, RotateCcw, Sparkles } from "lucide-react";
+import { toast } from "sonner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -44,8 +45,11 @@ export default function PredictPage() {
     try {
       const res = await predict(values);
       setResult(res);
+      toast.success(`${res.risk_level} risk — ${(res.probability * 100).toFixed(0)}% probability`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Prediction failed");
+      const message = e instanceof Error ? e.message : "Prediction failed";
+      setError(message);
+      toast.error(message);
     } finally {
       setLoading(false);
     }

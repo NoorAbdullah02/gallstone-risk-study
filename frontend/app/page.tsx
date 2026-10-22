@@ -7,6 +7,7 @@ import { ArrowRight, Dna, FlaskConical, ShieldCheck, TrendingUp } from "lucide-r
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { HeroCrystal } from "@/components/three/hero-crystal";
 import { getMetrics, type Metrics } from "@/lib/api";
 
 function StatCard({
@@ -62,6 +63,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="hero-glow"
       >
+        <HeroCrystal />
         <Badge variant="default" className="mb-4">
           <FlaskConical className="h-3 w-3" /> ISRC 2026 &middot; Poster Presentation
         </Badge>
