@@ -4,6 +4,7 @@ Run from the project root: uvicorn backend.main:app --reload --port 8000
 (must run from the root so `model.transformers` resolves for joblib.)
 """
 import json
+import os
 from pathlib import Path
 
 import joblib
@@ -19,9 +20,12 @@ ARTIFACTS = ROOT / "model" / "artifacts"
 
 app = FastAPI(title="Gallstone Risk Model API", version="1.0.0")
 
+_origins_env = os.environ.get("CORS_ORIGINS", "*")
+_allow_origins = ["*"] if _origins_env == "*" else [o.strip() for o in _origins_env.split(",")]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_allow_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )

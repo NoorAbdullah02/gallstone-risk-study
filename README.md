@@ -74,6 +74,19 @@ npm run dev
 Visit `http://localhost:3000`. The frontend reads `NEXT_PUBLIC_API_BASE` (see `frontend/.env.example`)
 to reach the backend, default `http://127.0.0.1:8000`.
 
+## Deploying (Render)
+
+A `render.yaml` Blueprint defines both services:
+
+- `gallstone-backend` &mdash; Python web service running `uvicorn backend.main:app`, loads the
+  committed `model/artifacts/` (no retraining needed at deploy time).
+- `gallstone-frontend` &mdash; Node web service running the Next.js production server, built with
+  `NEXT_PUBLIC_API_BASE` pointing at the backend's Render URL.
+
+In the Render dashboard: **New &rarr; Blueprint**, connect this repo, review the two services, and
+deploy. If you rename a service, update the matching URL in the other service's env vars
+(`CORS_ORIGINS` on the backend, `NEXT_PUBLIC_API_BASE` on the frontend).
+
 ## Disclaimer
 
 Exploratory research prototype. Not validated for clinical deployment or diagnostic use.
